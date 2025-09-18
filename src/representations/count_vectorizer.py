@@ -16,7 +16,6 @@ class CountVectorizer(Vectorizer):
             tokens = self.tokenizer.tokenize(doc)
             unique_tokens.update(tokens)
 
-        # Sắp xếp từ vựng và gán chỉ số
         self.vocabulary_ = {token: idx for idx, token in enumerate(sorted(unique_tokens))}
 
     def transform(self, documents: List[str]) -> List[List[int]]:
